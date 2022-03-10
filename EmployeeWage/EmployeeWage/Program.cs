@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Welocome to Employee Wage");
 
-Random random = new Random();   //Generates Random Numbers
 
+
+//constants
 const int Present = 1,
             Halfday = 2,
             fullMonth=3,
@@ -11,57 +12,38 @@ const int Present = 1,
             Partime = 4,
             perHrWage = 20, 
             perMonthDays =20,
-            maxHr=100;
+            maxHr=10;
 
-int isPresent = random.Next(4),    // Present = 1, Halfday = 2, fullMonth=3, Absent = 0,
-empWage = 0;
-int days=0;
+Random random = new Random();   //Generates Random Numbers
+int isPresent = random.Next(4);    // Present = 1, Halfday = 2, fullMonth=3, Absent = 0,
+
+int empWage = 0, //variable
+    TotalEmpWage = 0,
+    WorkingHrs = 0;
+
 Console.WriteLine("isPresent" + isPresent);
-
-while (maxHr >= 1 && perMonthDays <= 20)
+while (TotalEmpWage <= maxHr && TotalEmpWage <= perMonthDays)
 {
-    days++;
-    Console.WriteLine("days" + days);
-    Console.ReadLine();
-}
-
-/*switch (isPresent)
-{
-    case Present:
-        Console.WriteLine("Employee is Present");
-        empWage = perHrWage * Fulltime;
-        break;
-
-    case Halfday:
-        Console.WriteLine("Employee is Present");
-        empWage = perHrWage * Partime;
-        break;
-
-    case fullMonth:
-        Console.WriteLine("Employee Per Month salary");
-        empWage = perMonthDays * (Fulltime * perHrWage);
-        break;
-
-    default:
-        Console.WriteLine("Employee is Absent");
-        break;
-
-}
- /*       if (isPresent == Present)
-        {
+    WorkingHrs++;
+    switch (isPresent)
+    {
+        case Present:
             Console.WriteLine("Employee is Present");
             empWage = perHrWage * Fulltime;
-        }
-        else if (isPresent == Halfday)
-        {
+            break;
+
+        case Halfday:
             Console.WriteLine("Employee is Present");
             empWage = perHrWage * Partime;
-        }
-        else
-        {
-            Console.WriteLine("Employee is Absent");
-        }
+            break;
 
-*/
+        default:
+            Console.WriteLine("Employee is Absent");
+            break;
+
+    }
+    TotalEmpWage += empWage;
+    Console.WriteLine("Days# : " + TotalEmpWage + "empWage : " + empWage);
+}
 
 Console.WriteLine("empWage: " + empWage);
