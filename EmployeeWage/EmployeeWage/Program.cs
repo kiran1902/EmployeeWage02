@@ -4,15 +4,20 @@ Console.WriteLine("Welocome to Employee Wage");
 Random random = new Random();   //Generates Random Numbers
 
 const int Present = 1,
-            Halfday=2,
+            Halfday = 2,
+            fullMonth=3,
             Absent = 0,
-            perHrWage=20,
-            Fulltime=8,
-            Partime=4;
+            Fulltime = 8,
+            Partime = 4,
+            perHrWage = 20, 
+            perMonth =20;
 
-int isPresent = random.Next(3),    // Present = 1, Partime = 2, Absent = 0,
-    empWage = 0;
+int isPresent = random.Next(4),    // Present = 1, Halfday = 2, fullMonth=3, Absent = 0,
+empWage = 0;
 Console.WriteLine("isPresent" + isPresent);
+
+
+
 
 switch (isPresent)
 {
@@ -26,12 +31,17 @@ switch (isPresent)
         empWage = perHrWage * Partime;
         break;
 
+    case fullMonth:
+        Console.WriteLine("Employee Monthly salary");
+        empWage = perMonth * (Fulltime * perHrWage);
+        break;
+
     default:
         Console.WriteLine("Employee is Absent");
         break;
 
 }
-        /*if (isPresent == Present)
+ /*       if (isPresent == Present)
         {
             Console.WriteLine("Employee is Present");
             empWage = perHrWage * Fulltime;
@@ -44,7 +54,8 @@ switch (isPresent)
         else
         {
             Console.WriteLine("Employee is Absent");
-        }*/
+        }
 
+*/
 
-        Console.WriteLine("empWage: " + empWage);
+Console.WriteLine("empWage: " + empWage);
