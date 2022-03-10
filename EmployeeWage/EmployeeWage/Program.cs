@@ -18,7 +18,7 @@ empWage = 0;
 int days=0;
 Console.WriteLine("isPresent" + isPresent);
 
-while (maxHr>=1 && perMonthDays <= 20)
+while (maxHr >= 1 && perMonthDays <= 20)
 {
     days++;
     Console.WriteLine("days" + days);
