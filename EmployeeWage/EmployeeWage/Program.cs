@@ -14,18 +14,37 @@ int isPresent = random.Next(3),    // Present = 1, Partime = 2, Absent = 0,
     empWage = 0;
 Console.WriteLine("isPresent" + isPresent);
 
-if(isPresent == Present)
+switch (isPresent)
 {
-    Console.WriteLine("Employee is Present");
-    empWage = perHrWage * Fulltime;
+    case Present:
+        Console.WriteLine("Employee is Present");
+        empWage = perHrWage * Fulltime;
+        break;
+
+    case Halfday:
+        Console.WriteLine("Employee is Present");
+        empWage = perHrWage * Partime;
+        break;
+
+    default:
+        Console.WriteLine("Employee is Absent");
+        break;
+
 }
-else if (isPresent == Halfday)
-{
-    Console.WriteLine("Employee is Present");
-    empWage = perHrWage * Partime;
-}
-else
-{
-    Console.WriteLine("Employee is Absent");
-}
-Console.WriteLine("empWage: " + empWage);
+        /*if (isPresent == Present)
+        {
+            Console.WriteLine("Employee is Present");
+            empWage = perHrWage * Fulltime;
+        }
+        else if (isPresent == Halfday)
+        {
+            Console.WriteLine("Employee is Present");
+            empWage = perHrWage * Partime;
+        }
+        else
+        {
+            Console.WriteLine("Employee is Absent");
+        }*/
+
+
+        Console.WriteLine("empWage: " + empWage);
