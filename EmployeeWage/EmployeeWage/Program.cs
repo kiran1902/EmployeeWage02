@@ -9,7 +9,7 @@ const int Present = 1,
 int isPresent = random.Next(2);
 Console.WriteLine("isPresent" + isPresent);
 
-if(isPresent == 1)
+if(isPresent == Present)
 {
     Console.WriteLine("Employee is Present");
 }
