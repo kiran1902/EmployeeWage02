@@ -10,16 +10,22 @@ const int Present = 1,
             Fulltime = 8,
             Partime = 4,
             perHrWage = 20, 
-            perMonth =20;
+            perMonthDays =20,
+            maxHr=100;
 
 int isPresent = random.Next(4),    // Present = 1, Halfday = 2, fullMonth=3, Absent = 0,
 empWage = 0;
+int days=0;
 Console.WriteLine("isPresent" + isPresent);
 
+while (maxHr>=1 && perMonthDays <= 20)
+{
+    days++;
+    Console.WriteLine("days" + days);
+    Console.ReadLine();
+}
 
-
-
-switch (isPresent)
+/*switch (isPresent)
 {
     case Present:
         Console.WriteLine("Employee is Present");
@@ -32,8 +38,8 @@ switch (isPresent)
         break;
 
     case fullMonth:
-        Console.WriteLine("Employee Monthly salary");
-        empWage = perMonth * (Fulltime * perHrWage);
+        Console.WriteLine("Employee Per Month salary");
+        empWage = perMonthDays * (Fulltime * perHrWage);
         break;
 
     default:
