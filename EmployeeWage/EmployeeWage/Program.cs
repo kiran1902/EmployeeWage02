@@ -1,6 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Welocome to Employee Wage");
+﻿using EmployeeWage;
 
+<<<<<<< HEAD
 
 
 //constants
@@ -47,3 +47,7 @@ while (TotalEmpWage <= maxHr && TotalEmpWage <= perMonthDays)
 }
 
 Console.WriteLine("empWage: " + empWage);
+=======
+Employewage empwage = new Employewage();
+empwage.StartWageClac();
+>>>>>>> UC6_EmpWageOOPS
